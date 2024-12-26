@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Wishes with Animated Symbols</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            animation: fadeIn 3s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .year {
+            font-size: 5em;
+            display: flex;
+            gap: 0.5em;
+        }
+        .digit {
+            animation: bounce 1s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="year">
+            <span class="digit">2</span>
+            <span class="digit">0</span>
+            <span class="digit">2</span>
+            <span class="digit">5</span>
+        </div>
+        <h1>🎉 Happy New Year 2025! 🎉</h1>
+        <p>Wishing you all the best for the year ahead!</p>
+    </div>
+    <script>
+        const digits = document.querySelectorAll('.digit');
+        digits.forEach((digit, index) => {
+            digit.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        setTimeout(() => {
+            alert('May your new year be filled with joy, health, and success!');
+        }, 5000);
+    </script>
+</body>
+</html>
